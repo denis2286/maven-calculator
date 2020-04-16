@@ -6,14 +6,14 @@ node {
    }
    stage('JUnit Test') {
       if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' clean test"
+         sh "'/usr/bin/mvn' clean test"
       } else {
          bat(/"${mvnHome}\bin\mvn" clean test/)
       }
    }
    stage('Integration Test') {
       if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' integration-test"
+         sh "'/usr/bin/mvn' integration-test"
       } else {
          bat(/"${mvnHome}\bin\mvn" integration-test/)
       }
@@ -29,7 +29,7 @@ node {
   */
   stage('Performance Test') {
       if (isUnix()) {
-         sh "'${mvnHome}/bin/mvn' verify"
+         sh "'/usr/bin/mvn' verify"
       } else {
          bat(/"${mvnHome}\bin\mvn" verify/)
       }
