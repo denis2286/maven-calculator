@@ -1,5 +1,5 @@
 node {
-   def mvnHome = tool 'M3'
+   def mvnHome = tool 'maven3'
 
    stage('Checkout Code') { 
       git 'https://github.com/denis2286/maven-calculator.git'
